@@ -27,4 +27,8 @@ app.controller("mainController", function($scope){
   var tasks  = new getTasks();
 
   $scope.lista = tasks.itens;
+
+  $scope.onMarkTask = function(item) {
+    item.finalizada = !item.finalizada;
+  };
 });
