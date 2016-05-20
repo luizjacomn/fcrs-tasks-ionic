@@ -29,9 +29,27 @@
       <ion-header-bar class="bar-positive">
         <h1 class="title">FCRS-TASKS</h1>
       </ion-header-bar>
+
+      <ion-footer-bar class="bar-positive">
+        <div class="row">
+          <div class="col col-80">
+            <strong>Exibir tarefas finalizadas</strong>
+          </div>
+
+          <div class="col col-20">
+            <label class="toggle">
+              <input type="checkbox">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+          </label>
+          </div>
+        </div>
+      </ion-footer-bar>
+
       <ion-content ng-controller="mainController">
         <ion-list>
-          <ion-item ng-repeat="item in lista track by $index">
+          <ion-item ng-repeat="item in lista track by $index" ng-hide="item.finalizada">
             <div class="row">
               <div class="col col-90">
                 {{item.nome}}
